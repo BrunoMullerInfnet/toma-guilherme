@@ -10,16 +10,9 @@ public class Program
     {
         try
         {
-            string nomeRazaoSocial;
-            string documento;
-            DateTime dataNascimento;
-
-
             //throw new BusinessExcpetion("teste de excpetion por RN");
 
             List<Pessoa> lstPessoa = new List<Pessoa>();
-
-            string key = string.Empty;
 
             //Console.WriteLine("**Digita J para juridica e F para fisica***");
 
@@ -52,11 +45,21 @@ public class Program
 
             Fabricante fabricante = new Fabricante("Estrela", "Produtos Infantis");
 
-            Produto prod1 = new Produto(fabricante, "NomeProduto", 100, 5);
+            Produto prod1 = new Produto(fabricante, "Nome", 100, 5);
             prod1.RemoverEstoque();
             prod1.RemoverEstoque(1);
-            Console.WriteLine(prod1.ToString());
 
+
+            ///////////////////////////////////////////////////////////////////////////////////// Dever de casa: incluir obj na fila e retirar (criar novo obj)
+
+            Fila <Pessoa> fila2 = new Fila<Pessoa>();
+            List<Produto> lstProduto = new List<Produto>();
+            lstProduto.Add(new Produto(fabricante, "1NomeProduto", 100, 5));
+            lstProduto.Add(new Produto(fabricante, "2NomeProduto", 100, 5));
+            lstProduto.Add(new Produto(fabricante, "3NomeProduto", 100, 5));
+            lstProduto.Add(new Produto(fabricante, "4NomeProduto", 100, 5));
+
+            fila2.ColocarNaFila(prod1);
 
             Fila<Pessoa> fila = new Fila<Pessoa>();
 

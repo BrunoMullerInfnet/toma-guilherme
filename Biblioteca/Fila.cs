@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    public class Fila<Pessoa>
+    public class Fila<T>
     {
         private ArrayList array;
 
@@ -17,7 +17,7 @@ namespace Biblioteca
             array = new ArrayList();
         }
 
-        public void ColocarNaFila(Pessoa pessoa)
+        public void ColocarNaFila(object pessoa)
         {
             array.Add(pessoa);
         }
