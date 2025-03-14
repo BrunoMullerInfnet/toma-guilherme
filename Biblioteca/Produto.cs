@@ -11,12 +11,14 @@ namespace Biblioteca
         private string _nome;
         private decimal _valor;
         private short _quantidadeEstoque;
+        private Fabricante _fabricante;
 
-        public Produto(string nome, decimal valor, short quantidadeEstoque)
+        public Produto(Fabricante fabricante, string nome, decimal valor, short quantidadeEstoque)
         {
             _nome = nome;
             _valor = valor;
             _quantidadeEstoque = quantidadeEstoque;
+            _fabricante = fabricante;
         }
 
         public void AdicionarEstoque(short quantidade)
@@ -36,10 +38,10 @@ namespace Biblioteca
 
         public override string ToString()
         {
-            return $" Produto {_nome}" +
-                   $"tem o preço {_valor} " +
-                   $"e quantidade {_quantidadeEstoque}";
+            return $" Produto {_nome}, " +
+                   $"tem o preço {_valor}, " +
+                   $"quantidade {_quantidadeEstoque} "+
+                   $"e fabricante {_fabricante.Nome}, do ramo {_fabricante.Ramo}";
         }
-
     }
 }

@@ -50,10 +50,11 @@ public class Program
             //    key = Console.ReadLine();
             //}
 
-            Produto prod1 = new Produto("NomeProduto", 100, 3);
-            prod1.RemoverEstoque();
-            prod1.RemoverEstoque(10);
+            Fabricante fabricante = new Fabricante("Estrela", "Produtos Infantis");
 
+            Produto prod1 = new Produto(fabricante, "NomeProduto", 100, 5);
+            prod1.RemoverEstoque();
+            prod1.RemoverEstoque(1);
             Console.WriteLine(prod1.ToString());
 
 
